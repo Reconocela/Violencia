@@ -350,7 +350,7 @@ const Q=[
  ["Utiliza a tus hijos, familiares o mascotas para hacerte daño o asustarte.",7],
  ["Te amenaza con quitarte a tus hijos o con no dejarte verlos.",7]
 ];
-const A=[["Nunca",0],["A veces",1],["A menudo",2]];
+const A=[["Nunca",0],["Alguna vez",1],["Con frecuencia",2]];
 let qi=0;const ans=Array(Q.length).fill(null);
 function drawQ(){
   $("qcard").innerHTML=`<div><div class="dots">${Q.map((_,k)=>`<i class="${k<qi&&ans[k]!==null?"done":""}${k===qi?" cur":""}"></i>`).join("")}</div></div>
