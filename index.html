@@ -34,6 +34,8 @@ h1,h2,h3{font-family:var(--display);margin:0;line-height:1.02;text-wrap:balance;
 .bar .in{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-block:9px;flex-wrap:wrap;font-size:14px}
 .bar b{color:var(--amber)}
 .bar a.n{color:#fff;font-weight:700}
+.bar .short{display:none}
+@media (max-width:600px){.bar .in{flex-wrap:nowrap;padding-block:7px;font-size:14.5px}.bar .long{display:none}.bar .short{display:inline}.bartxt{white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}.exit{padding:7px 12px!important;font-size:13.5px!important}}
 .exit{background:var(--coral);color:#fff;font:700 14px var(--body);padding:8px 14px;border-radius:8px;text-decoration:none;white-space:nowrap}
 
 /* hero */
@@ -152,6 +154,103 @@ input[type=range]{position:absolute;inset:-12px 0;width:100%;height:46px;margin:
 .res .acts{display:flex;gap:10px;flex-wrap:wrap}
 .res .acts a,.res .acts button{font:700 15px var(--body);padding:11px 16px;border-radius:11px;border:0;cursor:pointer;text-decoration:none}
 
+/* después */
+.after{background:linear-gradient(180deg,#e9f3ef,var(--paper) 70%)}
+.after .kicker{background:#0f5c4f;color:#fff}
+.after .h2 em{font-style:normal;color:#0f5c4f}
+.road{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:30px;position:relative}
+.road::before{content:"";position:absolute;left:10%;right:10%;top:27px;height:4px;border-radius:4px;background:repeating-linear-gradient(90deg,#0f5c4f 0 14px,transparent 14px 22px);opacity:.45}
+.stp{position:relative;display:grid;justify-items:center;gap:10px;text-align:center;background:none;border:0;cursor:pointer;padding:0 4px;color:var(--ink);font:700 14.5px/1.2 var(--body)}
+.stp i{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font:800 1.3rem var(--display);font-style:normal;background:#fff;border:3px solid #0f5c4f;color:#0f5c4f;transition:transform .15s,background .15s}
+.stp:hover i{transform:scale(1.07)}
+.stp[aria-pressed="true"] i{background:#0f5c4f;color:#fff}
+@media (max-width:640px){.road{grid-template-columns:1fr;gap:10px}.road::before{display:none}.stp{grid-template-columns:auto 1fr;justify-items:start;text-align:left;align-items:center;font-size:15.5px}.stp i{width:46px;height:46px}}
+.stpanel{margin-top:24px;background:var(--card);border-radius:22px;padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:26px;border:2px solid #0f5c4f;min-height:220px}
+@media (max-width:720px){.stpanel{grid-template-columns:1fr}}
+.stpanel h3{grid-column:1/-1;font-size:clamp(1.6rem,4.6vw,2.2rem);font-weight:800}
+.stpanel h4{margin:0 0 8px;font:700 12.5px var(--body);letter-spacing:.12em;text-transform:uppercase;color:#0f5c4f}
+.stpanel ul{margin:0;padding-left:18px;display:grid;gap:7px}
+.stpanel p{margin:0}
+.nonlin{margin-top:14px;font-size:14.5px;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+.blk{margin-top:52px}
+.blk>h3{font-size:clamp(1.6rem,4.6vw,2.3rem);font-weight:800;margin-bottom:6px}
+.blk>p.lead{margin-bottom:18px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:720px){.duo{grid-template-columns:1fr}}
+.dd{border-radius:18px;padding:20px 22px;min-width:0}
+.dd.yes{background:#dff1ea}
+.dd.no{background:#fbe3df}
+.dd h4{margin:0 0 10px;font:800 1.25rem var(--display)}
+.dd ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.dd li{padding-left:28px;position:relative}
+.dd.yes li::before{content:"✓";position:absolute;left:0;font-weight:800;color:#0f5c4f}
+.dd.no li::before{content:"✕";position:absolute;left:0;font-weight:800;color:#b3261e}
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.rc{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:18px 20px;display:grid;gap:7px;align-content:start;min-width:0}
+.rc .k{font:700 11.5px var(--body);letter-spacing:.12em;text-transform:uppercase;color:#0f5c4f}
+.rc h4{margin:0;font:800 1.15rem/1.2 var(--display)}
+.rc p{margin:0;font-size:14.5px;color:var(--muted)}
+.rc .tel2{font:800 1.3rem var(--display);color:var(--violet);font-variant-numeric:tabular-nums}
+.rc a{color:var(--violet);font-weight:700;font-size:14px}
+.rights{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.rt{background:#0f5c4f;color:#fff;border-radius:16px;padding:18px;display:grid;gap:6px;min-width:0}
+.rt b{font:800 1.1rem/1.2 var(--display)}
+.rt span{font-size:14px;color:#cfe8df}
+.hint2{margin-top:12px;font-size:14px;color:var(--muted)}
+.books{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media (max-width:820px){.books{grid-template-columns:1fr 1fr;gap:14px}.cover b{font-size:1.15rem}}
+.book{display:grid;gap:10px;align-content:start;min-width:0}
+.cover{aspect-ratio:2/3;max-width:100%;border-radius:4px 12px 12px 4px;padding:18px 16px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;box-shadow:inset 8px 0 0 rgba(0,0,0,.18),0 10px 24px rgba(27,21,48,.22);transition:transform .2s}
+.book:hover .cover{transform:translateY(-4px) rotate(-1deg)}
+.cover b{font:800 1.45rem/1.05 var(--display);letter-spacing:-.01em}
+.cover small{font-size:13px;font-weight:600;opacity:.9}
+.book p{margin:0;font-size:14.5px;color:var(--muted)}
+.lib{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:end}
+@media (max-width:820px){.lib{grid-template-columns:1fr}}
+.shelfbox{background:linear-gradient(180deg,#f7f1e6,#efe4d0);border-radius:22px;padding:30px 24px 18px;min-width:0;box-shadow:inset 0 0 0 1.5px #e3d5bb}
+.shelf{display:flex;align-items:flex-end;justify-content:center;gap:6px;min-height:320px}
+.spine{position:relative;width:var(--w);height:var(--h);background:var(--c);border:0;border-radius:4px 4px 2px 2px;cursor:pointer;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:14px 0 12px;box-shadow:inset -6px 0 0 rgba(0,0,0,.16),inset 4px 0 0 rgba(255,255,255,.12),0 2px 0 rgba(0,0,0,.08);transition:transform .25s cubic-bezier(.3,1.4,.5,1)}
+.spine::before,.spine::after{content:"";position:absolute;left:0;right:0;height:3px;background:rgba(255,255,255,.35)}
+.spine::before{top:9px}.spine::after{bottom:30px}
+.spine b{writing-mode:vertical-rl;transform:rotate(180deg);font:800 clamp(.95rem,2.6vw,1.12rem)/1.05 var(--display);letter-spacing:.01em;max-height:calc(var(--h) - 70px);overflow:hidden;text-align:left}
+.spine small{font:700 11px var(--body);opacity:.85;letter-spacing:.06em}
+.spine:hover{transform:translateY(-8px)}
+.spine[aria-pressed="true"]{transform:translateY(-22px)}
+.spine.lean{transform-origin:bottom left;transform:rotate(-7deg);margin-left:14px}
+.spine.lean:hover{transform:rotate(-7deg) translateY(-8px)}
+.spine.lean[aria-pressed="true"]{transform:rotate(-7deg) translateY(-22px)}
+.plant{width:54px;height:120px;position:relative;margin-left:10px;flex:none}
+.plant i{position:absolute;bottom:0;left:6px;width:42px;height:44px;background:#c76b4a;border-radius:4px 4px 12px 12px}
+.plant em{position:absolute;bottom:40px;width:16px;height:52px;background:#3f7d5c;border-radius:50% 50% 50% 50%/70% 70% 30% 30%;transform-origin:bottom center}
+.plant em:nth-child(2){left:19px;height:66px}
+.plant em:nth-child(3){left:8px;transform:rotate(-28deg)}
+.plant em:nth-child(4){left:30px;transform:rotate(26deg)}
+.plank{height:14px;border-radius:4px;background:linear-gradient(180deg,#b98a5a,#946a40);box-shadow:0 8px 14px rgba(80,50,20,.22)}
+.tip{margin:12px 0 0;text-align:center;font-size:13.5px;color:#7a6449}
+.opened{position:relative;perspective:1800px;min-width:0;--bc:#0f5c4f}
+.page{position:relative;background:#fffdf6;border-radius:6px 20px 20px 6px;padding:28px 28px 28px 40px;display:grid;gap:10px;align-content:start;min-height:300px;box-shadow:0 14px 34px rgba(27,21,48,.16),inset 22px 0 26px -18px rgba(80,60,30,.28);background-image:repeating-linear-gradient(transparent 0 30px,rgba(91,42,134,.06) 30px 31px)}
+.page::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;border-radius:6px 0 0 6px;background:var(--bc)}
+.page>*{opacity:0;transform:translateY(6px);transition:opacity .35s,transform .35s}
+.opened.is-open .page>*{opacity:1;transform:none;transition-delay:.45s}
+.bcover{position:absolute;inset:0;z-index:2;transform-origin:left center;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.55,.05,.25,1),opacity .25s ease .7s;pointer-events:none}
+.opened.is-open .bcover{transform:rotateY(-158deg);opacity:0}
+.opened:not(.is-open) .bcover{transition:transform .55s cubic-bezier(.4,0,.2,1),opacity 0s}
+.bcover .front,.bcover .back{position:absolute;inset:0;border-radius:6px 20px 20px 6px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.bcover .front{background:var(--bc);color:#fff;padding:34px 30px 28px 42px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 14px 0 0 rgba(0,0,0,.18),inset 18px 0 0 rgba(255,255,255,.12),0 14px 34px rgba(27,21,48,.25)}
+.bcover .front b{font:800 clamp(1.7rem,5vw,2.4rem)/1.02 var(--display);letter-spacing:-.01em;border-top:3px solid rgba(255,255,255,.4);border-bottom:3px solid rgba(255,255,255,.4);padding:14px 0}
+.bcover .front small{font-weight:700;font-size:15px;opacity:.9}
+.bcover .back{transform:rotateY(180deg);background:var(--bc);filter:brightness(.82)}
+.bookcard{background:var(--card);border-radius:22px;padding:26px;border:2px solid var(--line);display:grid;gap:10px;min-width:0;align-content:start;min-height:260px}
+.page .k,.bookcard .k{font:700 12px var(--body);letter-spacing:.12em;text-transform:uppercase}
+.page h4,.bookcard h4{margin:0;font:800 clamp(1.5rem,4.4vw,2rem)/1.05 var(--display)}
+.page .au,.bookcard .au{font-weight:600;color:var(--muted)}
+.page p,.bookcard p{margin:0;font-size:1.02rem}
+.page a,.bookcard a{justify-self:start;margin-top:6px;color:#fff;font-weight:700;text-decoration:none;padding:11px 16px;border-radius:11px}
+@media (max-width:520px){.shelf{gap:4px;min-height:270px}.spine{width:calc(var(--w) * .78);height:calc(var(--h) * .85)}.spine b{max-height:calc(var(--h) * .85 - 50px);font-size:.74rem}.spine small{font-size:10px}.plant{display:none}}
+.closing{margin-top:52px;background:var(--ink);color:#fff;border-radius:24px;padding:30px;display:grid;gap:12px}
+.closing p.big{margin:0;font:800 clamp(1.5rem,4.4vw,2.2rem)/1.15 var(--display)}
+.closing a{color:var(--amber);font-weight:700}
+
 /* testimonios */
 .voices{background:var(--ink);color:#fff}
 .voices .kicker{background:var(--amber);color:var(--ink)}
@@ -204,14 +303,34 @@ input[type=range]{position:absolute;inset:-12px 0;width:100%;height:46px;margin:
 .src-note{font-size:13px;color:#9d94b5;margin-top:18px}
 .src-note a{color:#fff}
 
+/* resaltado al pasar el ratón */
+@media (hover:hover){
+  .rc,.rt,.sc,.phone,.vcard,.dd,.privacy,.stpanel,.type{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+  .rc:hover,.sc:hover,.phone:hover,.privacy:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(27,21,48,.16);border-color:var(--violet-2)}
+  .rt:hover,.vcard:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.28)}
+  .dd:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(27,21,48,.12)}
+  .stat{transition:border-color .2s,transform .2s}
+  .stat:hover{border-color:#fff;transform:translateY(-3px)}
+  .panel li{transition:transform .15s,background .15s,color .15s}
+  .panel li:hover{transform:scale(1.06);background:var(--violet);color:#fff}
+  .phone .num a:hover,.rc .tel2:hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:4px}
+}
+
 footer{background:var(--ink);color:#b9b1cf;font-size:13.5px;padding-block:28px}
 footer a{color:#fff}
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:32px;align-items:start}
+@media (max-width:760px){.about{grid-template-columns:1fr;gap:18px}}
+.about .who{font:800 clamp(2.2rem,6.5vw,3.6rem)/1 var(--display);letter-spacing:-.02em;margin:14px 0 10px;color:var(--violet)}
+.about .role{font-weight:600;color:var(--ink);font-size:1.05rem}
+.about .txt{display:grid;gap:14px;min-width:0;border-left:4px solid var(--lilac);padding-left:22px}
+.about .txt p{margin:0;font-size:1.1rem;color:var(--muted);max-width:56ch}
+.about .txt p:first-child{color:var(--ink);font-size:1.25rem;font-weight:500}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 
 <div class="bar"><div class="in">
-  <span><b>¿Peligro ahora?</b> <a class="n" href="tel:112">112</a> · Ayuda 24 h <a class="n" href="tel:016">016</a> · no sale en la factura</span>
-  <a class="exit" id="exit" href="https://www.google.es">Salida rápida ✕</a>
+  <span class="bartxt"><b>¿Peligro<span class="long"> ahora</span>?</b> <a class="n" href="tel:112">112</a> · <span class="long">Ayuda 24 h </span><span class="short">Ayuda </span><a class="n" href="tel:016">016</a><span class="long"> · no sale en la factura</span></span>
+  <a class="exit" id="exit" href="https://www.google.es">Salida<span class="long"> rápida</span> ✕</a>
 </div></div>
 
 <header class="hero"><div class="in">
@@ -227,7 +346,8 @@ footer a{color:#fff}
     <a class="cta main" href="#iceberg"><span class="dot">1</span>Explora el iceberg</a>
     <a class="cta" href="#metro"><span class="dot">2</span>Violentómetro</a>
     <a class="cta" href="#testimonios"><span class="dot">3</span>Testimonios</a>
-    <a class="cta" href="#test"><span class="dot">4</span>Haz el test</a>
+    <a class="cta" href="#despues"><span class="dot">4</span>Volver a empezar</a>
+    <a class="cta" href="#test"><span class="dot">5</span>Haz el test</a>
     <a class="cta" href="#ayuda"><span class="dot">☎</span>Pedir ayuda</a>
   </div>
 </div></header>
@@ -318,6 +438,81 @@ footer a{color:#fff}
   </div>
 </div></section>
 
+<section class="band after" id="despues"><div class="in">
+  <span class="kicker">Después</span>
+  <h2 class="h2">Hay vida después. <em>Volver a empezar</em></h2>
+  <p class="lead">Salir de la violencia es el primer paso. Después llega la recuperación, y no tienes que hacerla sola. Toca cada etapa del camino.</p>
+
+  <div class="road" id="road" role="group" aria-label="Etapas de la recuperación"></div>
+  <div class="stpanel" id="stpanel" aria-live="polite"></div>
+  <p class="nonlin">↺ <span>La recuperación no es una línea recta. Tener días malos, dudar o volver atrás alguna vez es normal y no significa que estés fallando.</span></p>
+
+  <div class="blk">
+    <h3>Apóyate en otras personas</h3>
+    <p class="lead">El agresor suele aislar a la mujer. Recuperar a tu gente es parte de la recuperación.</p>
+    <div class="grid3">
+      <div class="rc"><span class="k">Tu entorno</span><h4>Familia y amistades</h4><p>Retoma el contacto poco a poco con las personas de las que te alejaste. Muchas estarán esperando a que vuelvas.</p></div>
+      <div class="rc"><span class="k">Mujeres como tú</span><h4>Red de Mujeres Supervivientes</h4><p>La Fundación Ana Bella, nacida en Sevilla, es una red creada por mujeres que salieron de la violencia y acompañan a otras en su recuperación y en la búsqueda de empleo.</p></div>
+      <div class="rc"><span class="k">Grupos</span><h4>Grupos de apoyo</h4><p>Pregunta en el Centro Municipal de la Mujer o en el Instituto Andaluz de la Mujer por grupos de mujeres que han vivido lo mismo.</p></div>
+    </div>
+  </div>
+
+  <div class="blk">
+    <h3>Si una amiga te lo cuenta</h3>
+    <p class="lead">Tu reacción puede ser decisiva para que siga pidiendo ayuda.</p>
+    <div class="duo">
+      <div class="dd yes"><h4>Sí</h4><ul><li>Escúchala sin juzgar y créela.</li><li>Dile que no es culpa suya.</li><li>Respeta sus tiempos y sus decisiones.</li><li>Ofrécete a acompañarla a pedir ayuda.</li><li>Infórmate: el 016 también atiende a familiares y amistades.</li></ul></div>
+      <div class="dd no"><h4>No</h4><ul><li>Preguntarle «¿por qué no lo dejas?» o «¿por qué no te fuiste antes?».</li><li>Presionarla para que denuncie o rompa si no está preparada.</li><li>Contarlo a otras personas sin su permiso, salvo que su vida corra peligro.</li><li>Enfrentarte tú al agresor.</li></ul></div>
+    </div>
+  </div>
+
+  <div class="blk">
+    <h3>Ayuda profesional gratuita</h3>
+    <p class="lead">Para tratar las secuelas: ansiedad, miedo, insomnio, culpa o recuerdos que vuelven.</p>
+    <div class="grid3">
+      <div class="rc"><span class="k">Granada</span><h4>Atención psicológica del Centro Municipal de la Mujer</h4><span class="tel2">958 24 81 16</span><p>Apoyo psicológico, social y jurídico especializado en violencia de género.</p></div>
+      <div class="rc"><span class="k">Andalucía</span><h4>Centro Provincial del Instituto Andaluz de la Mujer</h4><span class="tel2">958 02 58 00</span><p>Atención psicológica gratuita con cita previa. También informa en el 900 200 999, las 24 horas.</p></div>
+      <div class="rc"><span class="k">Hijas e hijos</span><h4>Atención psicológica a menores</h4><p>El Instituto Andaluz de la Mujer atiende a hijas e hijos de 0 a 17 años de mujeres víctimas, y tiene un programa para chicas de 14 a 17 años que han sufrido violencia en sus primeras relaciones.</p></div>
+      <div class="rc"><span class="k">Tu centro de salud</span><h4>Atención primaria</h4><p>Tu enfermera y tu médica de familia están formadas para detectar la violencia, cuidar tu salud física y emocional y derivarte a recursos especializados.</p></div>
+      <div class="rc"><span class="k">Estudiantes UGR</span><h4>Unidad de Igualdad de la UGR</h4><p>Exención de matrícula, adaptación de horarios, traslado de expediente y atención psicológica para estudiantes víctimas de violencia de género.</p><a href="https://viics.ugr.es/" target="_blank" rel="noopener">viics.ugr.es ↗</a></div>
+    </div>
+  </div>
+
+  <div class="blk">
+    <h3>Recupera tu independencia</h3>
+    <p class="lead">Derechos que reconoce la ley a las víctimas de violencia de género (Ley Orgánica 1/2004).</p>
+    <div class="rights">
+      <div class="rt"><b>Derechos laborales</b><span>Reducir o reordenar tu jornada, cambiar de centro de trabajo o suspender el contrato con reserva de puesto.</span></div>
+      <div class="rt"><b>Ayudas económicas</b><span>Ayuda específica si tienes dificultades para encontrar empleo, y acceso a la Renta Activa de Inserción.</span></div>
+      <div class="rt"><b>Vivienda</b><span>Prioridad para acceder a viviendas protegidas.</span></div>
+      <div class="rt"><b>Abogada gratuita</b><span>Asistencia jurídica gratuita e inmediata, sin importar tus ingresos.</span></div>
+      <div class="rt"><b>Empleo</b><span>Programa de acompañamiento para la inserción sociolaboral del Servicio Andaluz de Empleo: orientación, formación y búsqueda de trabajo.</span></div>
+    </div>
+    <p class="hint2">Para acceder a estos derechos necesitas acreditar que eres víctima. No siempre hace falta denuncia: el Centro Municipal de la Mujer puede ayudarte a conseguir la acreditación. Para el programa de empleo, infórmate en el 012 o el 955 012 012.</p>
+  </div>
+
+  <div class="blk">
+    <h3>Libros que ayudan</h3>
+    <p class="lead">Para entender lo que pasó y dejar de culparte.</p>
+    <div class="lib">
+      <div class="shelfbox">
+        <div class="shelf" id="shelf" role="group" aria-label="Estantería de libros"></div>
+        <div class="plank"></div>
+        <p class="tip">Toca un libro para sacarlo de la estantería</p>
+      </div>
+      <div class="opened" id="opened">
+        <div class="page" id="bookcard" aria-live="polite"></div>
+        <div class="bcover" aria-hidden="true"><div class="front" id="bfront"></div><div class="back"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="closing">
+    <p class="big">Muchas mujeres han salido y hoy viven en paz. Tú también puedes.</p>
+    <p style="margin:0;color:#c9c1dc">Lee cómo lo consiguieron en los <a href="#testimonios">testimonios de supervivientes</a>, o da el primer paso con el <a href="#ayuda">016</a>.</p>
+  </div>
+</div></section>
+
 <section class="band" id="test"><div class="in">
   <span class="kicker">Autoevaluación</span>
   <h2 class="h2">¿Tu relación es sana?</h2>
@@ -327,6 +522,18 @@ footer a{color:#fff}
       <div class="privacy"><strong>Tus respuestas no se guardan</strong> ni se envían a nadie. El resultado es orientativo y no sustituye la valoración de una profesional.</div>
     </div>
     <div class="qcard" id="qcard"></div>
+  </div>
+</div></section>
+
+<section class="band" id="sobre"><div class="in about">
+  <div>
+    <span class="kicker">Sobre el proyecto</span>
+    <h2 class="who">Ágata Jaime Montes</h2>
+    <div class="role">Estudiante de Enfermería · Universidad de Granada</div>
+  </div>
+  <div class="txt">
+    <p>«Reconócela» nace como un trabajo universitario de la asignatura Enfermería Transcultural, Género y Salud, para ayudar a identificar la violencia de género y acercar los recursos de ayuda de Granada.</p>
+    <p>Reúne los tipos de violencia, testimonios reales, un test orientativo y los teléfonos y centros a los que acudir, todo en una página que se puede abrir desde el móvil escaneando un código QR.</p>
   </div>
 </div></section>
 
@@ -435,6 +642,52 @@ V.forEach((v,k)=>{
     this.onclick=null;
   };
 });
+
+/* ---------- después: etapas ---------- */
+const STEPS=[
+ {t:"Ponerte a salvo",f:"Miedo, confusión, culpa o incluso alivio, todo mezclado.",h:["Si hay peligro, llama al 112. Para informarte, al 016.","Guarda tus documentos y los de tus hijos en un lugar seguro.","Conserva pruebas: mensajes, fotos, partes médicos.","Pregunta por una orden de protección."]},
+ {t:"Pedir apoyo",f:"Vergüenza o miedo a que no te crean. Son sentimientos muy comunes.",h:["Cuéntaselo a alguien de confianza.","Acude al Centro Municipal de la Mujer: no hace falta haber denunciado.","Busca un grupo de apoyo con otras mujeres."]},
+ {t:"Cuidar tu salud",f:"Ansiedad, insomnio, cansancio o recuerdos que vuelven. Son reacciones normales al trauma.",h:["Pide atención psicológica gratuita.","Habla con tu enfermera o tu médica de familia.","Cuida el sueño, la comida y tus rutinas."]},
+ {t:"Recuperar tu independencia",f:"Inseguridad al tomar decisiones sola después de tanto control.",h:["Solicita la acreditación de víctima para acceder a tus derechos.","Infórmate de las ayudas, la vivienda y los programas de empleo.","Recupera el control de tu dinero y tus documentos."]},
+ {t:"Reconstruir tu vida",f:"Ganas de volver a ser tú, aunque a veces aparezcan dudas.",h:["Retoma aficiones, estudios o proyectos que dejaste.","Aprende a reconocer una relación sana.","Cuando estés lista, tu historia puede ayudar a otras mujeres."]}
+];
+STEPS.forEach((s,k)=>{const b=document.createElement("button");b.className="stp";b.id="stp"+k;b.innerHTML=`<i>${k+1}</i>${s.t}`;b.onclick=()=>step(k);$("road").appendChild(b);});
+function step(k){
+  document.querySelectorAll(".stp").forEach((b,j)=>b.setAttribute("aria-pressed",j===k));
+  const s=STEPS[k];
+  $("stpanel").innerHTML=`<h3>${k+1}. ${s.t}</h3><div><h4>Qué puedes sentir</h4><p>${s.f}</p></div><div><h4>Qué puedes hacer</h4><ul>${s.h.map(x=>"<li>"+x+"</li>").join("")}</ul></div>`;
+}
+step(0);
+
+/* ---------- después: estantería ---------- */
+const BOOKS=[
+ {t:"Trauma y recuperación",a:"Judith Herman",c:"#0f5c4f",w:66,h:292,d:"El clásico sobre cómo se sana del trauma. Explica la recuperación en tres pasos: recuperar la seguridad, poner palabras a lo que pasó y volver a conectar con los demás.",u:"https://www.planetadelibros.com/libro-trauma-y-recuperacion/1857"},
+ {t:"Mujeres maltratadas",a:"M.-F. Hirigoyen",c:"#5b2a86",w:58,h:262,d:"Explica los mecanismos de la violencia en la pareja: cómo empieza, cómo atrapa y por qué cuesta tanto salir.",u:"https://www.planetadelibros.com/libro-mujeres-maltratadas/20540"},
+ {t:"¿Por qué se comporta así?",a:"Lundy Bancroft",c:"#b3261e",w:72,h:304,d:"Ayuda a entender cómo piensa un hombre que maltrata y a ver con claridad que la culpa nunca fue tuya.",u:"https://www.planetadelibros.com/libro-por-que-se-comporta-asi/245627"},
+ {t:"Mujeres que ya no sufren por amor",a:"Coral Herrera",c:"#c2410c",w:64,h:276,lean:1,d:"Desmonta los mitos del amor romántico, como «el amor todo lo puede» o los celos como prueba de amor, para construir relaciones sanas.",u:"https://www.lecturalia.com/libro/101157/mujeres-que-ya-no-sufren-por-amor"}
+];
+BOOKS.forEach((b,k)=>{const s=document.createElement("button");s.className="spine"+(b.lean?" lean":"");s.id="spine"+k;
+  s.style.cssText=`--c:${b.c};--w:${b.w}px;--h:${b.h}px`;s.setAttribute("aria-label",b.t+", de "+b.a);
+  s.innerHTML=`<b>${b.t}</b><small>${b.a.split(" ").pop().slice(0,3).toUpperCase()}</small>`;s.onclick=()=>pickBook(k);$("shelf").appendChild(s);});
+{const p=document.createElement("span");p.className="plant";p.setAttribute("aria-hidden","true");p.innerHTML="<i></i><em></em><em></em><em></em>";$("shelf").appendChild(p);}
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let curBook=-1,bookTimer;
+function fillBook(k){const b=BOOKS[k],o=$("opened");
+  o.style.setProperty("--bc",b.c);
+  $("bfront").innerHTML=`<b>${b.t}</b><small>${b.a}</small>`;
+  $("bookcard").innerHTML=`<span class="k" style="color:${b.c}">Libro ${k+1} de ${BOOKS.length}</span><h4>${b.t}</h4><span class="au">${b.a}</span><p>${b.d}</p><a href="${b.u}" target="_blank" rel="noopener" style="background:${b.c}">Ver el libro ↗</a>`;}
+function pickBook(k,first){
+  document.querySelectorAll(".spine").forEach((s,j)=>s.setAttribute("aria-pressed",j===k));
+  const o=$("opened");clearTimeout(bookTimer);
+  if(RM){fillBook(k);o.classList.add("is-open");curBook=k;return;}
+  const wasOpen=o.classList.contains("is-open");
+  o.classList.remove("is-open");
+  bookTimer=setTimeout(()=>{fillBook(k);void o.offsetWidth;
+    bookTimer=setTimeout(()=>o.classList.add("is-open"),first?350:60);},wasOpen?560:0);
+  curBook=k;
+  if(!first&&innerWidth<820)setTimeout(()=>o.scrollIntoView({behavior:"smooth",block:"center"}),wasOpen?400:0);
+}
+pickBook(0,true);
 
 /* ---------- supervivientes (Proyecto Esperanza) ---------- */
 const PE="https://www.proyectoesperanza.org/archivo/";
